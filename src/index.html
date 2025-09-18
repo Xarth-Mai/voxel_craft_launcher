@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voxel Craft Launcher</title>
+    <script type="module" src="./main.js" defer></script>
+  </head>
+
+  <body class="pixel-font stone-texture">
+    <!-- 顶部标题栏 -->
+    <header class="titlebar mc-panel wood-texture pixel-border">
+      <div class="titlebar-content">
+        <div class="logo-section">
+          <div class="minecraft-logo">🧱</div>
+          <h1>Voxel Craft Launcher</h1>
+        </div>
+        <div class="user-section">
+          <span class="version">v1.0.0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 顶部标签导航 -->
+    <nav class="tab-navigation wood-texture pixel-border">
+      <div class="nav-item mc-tab active" data-tab="launch">
+        <span class="nav-icon">🚀</span>
+        <span class="nav-text">启动游戏</span>
+      </div>
+      <div class="nav-item mc-tab" data-tab="versions">
+        <span class="nav-icon">📦</span>
+        <span class="nav-text">版本管理</span>
+      </div>
+      <div class="nav-item mc-tab" data-tab="mods">
+        <span class="nav-icon">🔧</span>
+        <span class="nav-text">模组管理</span>
+      </div>
+      <div class="nav-item mc-tab" data-tab="settings">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">设置</span>
+      </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-container">
+      <!-- 内容区域 -->
+      <div class="content-area">
+        <!-- 启动游戏标签页 -->
+        <div class="tab-content active" id="launch-tab">
+          <div class="launch-section">
+            <div class="game-info">
+              <div class="game-banner mc-panel grass-texture pixel-border">
+                <div class="game-title">Minecraft</div>
+                <div class="game-subtitle">准备开始你的冒险</div>
+              </div>
+            </div>
+
+            <div class="launch-controls">
+              <div class="player-info">
+                <label for="player-name">玩家名称</label>
+                <input class="mc-input" type="text" id="player-name" placeholder="请输入玩家名称..." />
+              </div>
+
+              <div class="version-selector">
+                <label for="version-select">游戏版本</label>
+                <select class="mc-input" id="version-select">
+                  <option value="1.20.1">Minecraft 1.20.1</option>
+                  <option value="1.19.4">Minecraft 1.19.4</option>
+                  <option value="1.18.2">Minecraft 1.18.2</option>
+                </select>
+              </div>
+
+              <button class="launch-button mc-button pixel-border" id="launch-game">
+                <span class="launch-icon">▶️</span>
+                启动游戏
+              </button>
+            </div>
+
+            <div class="status-area mc-panel pixel-border">
+              <div class="status-message" id="status-msg">准备就绪</div>
+              <div class="progress-bar mc-progress" id="progress-bar">
+                <div class="progress-fill mc-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 版本管理标签页 -->
+        <div class="tab-content" id="versions-tab">
+          <div class="versions-section">
+            <h2>版本管理</h2>
+            <div class="version-list">
+              <div class="version-item mc-panel pixel-border">
+                <span class="version-name">Minecraft 1.20.1</span>
+                <span class="version-status installed">已安装</span>
+              </div>
+              <div class="version-item mc-panel pixel-border">
+                <span class="version-name">Minecraft 1.19.4</span>
+                <span class="version-status">未安装</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 模组管理标签页 -->
+        <div class="tab-content" id="mods-tab">
+          <div class="mods-section">
+            <h2>模组管理</h2>
+            <p>模组功能开发中...</p>
+          </div>
+        </div>
+
+        <!-- 设置标签页 -->
+        <div class="tab-content" id="settings-tab">
+          <div class="settings-section">
+            <h2>设置</h2>
+            <div class="setting-group">
+              <h3>游戏设置</h3>
+              <div class="setting-item">
+                <label for="java-path">Java路径</label>
+                <input class="mc-input" type="text" id="java-path" placeholder="自动检测" />
+              </div>
+              <div class="setting-item">
+                <label for="memory-allocation">内存分配 (MB)</label>
+                <input class="mc-input" type="number" id="memory-allocation" value="2048" min="512" max="8192" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 底部状态栏 -->
+    <footer class="statusbar mc-panel wood-texture pixel-border">
+      <div class="status-left">
+        <span id="stats" class="stats-info">就绪</span>
+      </div>
+      <div class="status-right">
+        <span class="connection-status">🟢 在线</span>
+      </div>
+    </footer>
+  </body>
+</html>
