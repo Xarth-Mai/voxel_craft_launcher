@@ -41,7 +41,7 @@ async function launchGame() {
     // 显示启动状态
     showStatus('正在启动游戏...', 'info');
     launchButtonEl.disabled = true;
-    launchButtonEl.textContent = '启动中...';
+    launchButtonEl.innerHTML = '<span class="launch-icon">⏳</span>启动中...';
 
     // 模拟进度条
     animateProgress(0, 100, 3000);
